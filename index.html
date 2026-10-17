@@ -4,20 +4,93 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stillpiece</title>
+<meta name="description" content="Stillpiece — a calm jigsaw puzzle game with real, public-domain art for iPhone and Android. No ads, no accounts, works offline.">
+<link rel="icon" href="img/icon.jpg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
-<h1>Stillpiece</h1>
-<p class="muted">A calm jigsaw puzzle game with real, public-domain art. · Gerçek, kamu malı sanat eserleriyle sakin bir yapboz oyunu.</p>
-<nav>
-<a href="privacy.html">Privacy Policy</a>
-<a href="privacy.html#tr">Gizlilik Politikası</a>
-<a href="support.html">Support</a>
-<a href="support.html#tr">Destek</a>
-</nav>
-<p>Stillpiece works offline. It has no ads, no accounts and no tracking.</p>
-<p>Stillpiece çevrimdışı çalışır. Reklam, hesap ve takip yoktur.</p>
+<header class="top">
+  <a class="brand" href="index.html">Stillpiece</a>
+  <div class="lang" role="group" aria-label="Language / Dil">
+    <button type="button" data-set="en" aria-pressed="true">English</button>
+    <button type="button" data-set="tr" aria-pressed="false">Türkçe</button>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="img/icon.jpg" alt="" width="72" height="72">
+  <div>
+    <h1>Stillpiece</h1>
+    <p class="meta" data-l="en">A calm jigsaw puzzle game for iPhone and Android</p>
+    <p class="meta" data-l="tr" hidden>iPhone ve Android için sakin bir yapboz oyunu</p>
+  </div>
+</div>
+
+<p data-l="en">Jigsaw puzzles made from real works of art, from Van Gogh to Hokusai. No ads, no accounts, no internet needed, no rush.</p>
+<p data-l="tr" hidden>Van Gogh'dan Hokusai'ye gerçek sanat eserlerinden yapbozlar. Reklam yok, hesap yok, internet gerekmez, acele yok.</p>
+
+<h2 data-l="en">Features</h2><h2 data-l="tr" hidden>Özellikler</h2>
+<ul class="features" data-l="en">
+  <li><b>Real art</b> — public-domain paintings from the Cleveland Museum of Art, plus nature and 1940s photos from the US National Park Service and the Library of Congress. No AI-generated pictures.</li>
+  <li><b>At your own pace</b> — seven levels from Beginner to Grandmaster, 6 to 500 pieces.</li>
+  <li><b>Two ways to play</b> — pieces in a tray, or scattered on a table. Zoom, sort out edge pieces, peek at the preview.</li>
+  <li><b>Your own photos</b> — pick or take a photo, crop it and choose the piece count. It never leaves your device.</li>
+  <li><b>A puzzle every day</b> — solve the daily puzzle and grow your streak.</li>
+  <li><b>Nothing gets lost</b> — unfinished puzzles save automatically; progress syncs between iPhone and iPad with iCloud.</li>
+  <li>Light and dark themes, your choice of table color, English and Turkish.</li>
+</ul>
+<ul class="features" data-l="tr" hidden>
+  <li><b>Gerçek eserler</b> — Cleveland Museum of Art'ın kamu malı tabloları; ABD Milli Parklar Servisi ve Library of Congress'ten doğa ve 1940'lar fotoğrafları. Yapay zekâyla üretilmiş görsel yok.</li>
+  <li><b>Kendi hızında</b> — Başlangıç'tan Büyük Usta'ya yedi seviye, 6'dan 500 parçaya.</li>
+  <li><b>İki oyun biçimi</b> — parçalar tepside ya da masaya dağılmış. Yakınlaştır, kenar parçalarını ayır, önizlemeye bak.</li>
+  <li><b>Kendi fotoğrafların</b> — bir fotoğraf seç ya da çek, kırp, parça sayısını belirle. Fotoğraf cihazından çıkmaz.</li>
+  <li><b>Her gün bir yapboz</b> — günün yapbozunu çöz, art arda günlerle serini büyüt.</li>
+  <li><b>Hiçbir şey kaybolmaz</b> — yarım kalan yapboz otomatik kaydedilir; ilerleme iPhone ve iPad arasında iCloud ile eşitlenir.</li>
+  <li>Açık ve koyu tema, masa rengi seçimi, Türkçe ve İngilizce.</li>
+</ul>
+
+<h2 data-l="en">Screenshots</h2><h2 data-l="tr" hidden>Ekran görüntüleri</h2>
+<ul class="shots" id="shots"></ul>
+
+<h2 data-l="en">Premium</h2><h2 data-l="tr" hidden>Premium</h2>
+<p data-l="en">Free play covers every level up to Hard, with 10 puzzles per level. Premium (monthly or yearly, cancel anytime) adds unlimited puzzles, the 300 and 500 piece levels, unlimited hints and new artworks every month.</p>
+<p data-l="tr" hidden>Ücretsiz sürümde Zor'a kadar her seviyede 10 yapboz vardır. Premium (aylık ya da yıllık, istediğin zaman iptal) sınırsız yapboz, 300 ve 500 parçalı seviyeler, sınırsız ipucu ve her ay yeni eserler getirir.</p>
+
+<h2 data-l="en">Private by design</h2><h2 data-l="tr" hidden>Gizlilik öncelikli</h2>
+<p data-l="en">No accounts, no ads, no tracking. The app collects only anonymous crash reports (which you can turn off) and anonymous puzzle statistics, nothing linked to you.</p>
+<p data-l="tr" hidden>Hesap yok, reklam yok, takip yok. Uygulama yalnızca adsız çökme raporları (kapatılabilir) ve adsız yapboz istatistikleri toplar; hiçbiri seninle ilişkilendirilmez.</p>
+
+<ul class="links">
+  <li><a href="privacy.html" data-l="en">Privacy Policy</a><a href="privacy-tr.html" data-l="tr" hidden>Gizlilik Politikası</a></li>
+  <li><a href="support.html" data-l="en">Support</a><a href="support-tr.html" data-l="tr" hidden>Destek</a></li>
+</ul>
+<footer>© 2026 Stillpiece</footer>
 </main>
+<script>
+(function () {
+  var shots = [
+    ["1_home", "Home", "Ana sayfa"], ["2_tray", "Tray", "Tepsi"],
+    ["3_art_list", "Artworks", "Eserler"], ["4_table", "Table", "Masa"]
+  ];
+  function saved() { try { return localStorage.getItem("lang"); } catch (e) { return null; } }
+  function pick() {
+    var q = /[?&]lang=(en|tr)/.exec(location.search);
+    return (q && q[1]) || saved() || ((navigator.language || "").slice(0, 2) === "tr" ? "tr" : "en");
+  }
+  function apply(l) {
+    document.documentElement.lang = l;
+    document.querySelectorAll("[data-l]").forEach(function (e) { e.hidden = e.getAttribute("data-l") !== l; });
+    document.querySelectorAll("[data-set]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.set === l); });
+    document.getElementById("shots").innerHTML = shots.map(function (s) {
+      var c = l === "tr" ? s[2] : s[1];
+      return '<li><figure><img loading="lazy" src="img/' + l + "/" + s[0] + '.jpg" alt="Stillpiece — ' + c + '"><figcaption>' + c + "</figcaption></figure></li>";
+    }).join("");
+    try { localStorage.setItem("lang", l); } catch (e) {}
+  }
+  document.querySelectorAll("[data-set]").forEach(function (b) { b.addEventListener("click", function () { apply(b.dataset.set); }); });
+  apply(pick());
+})();
+</script>
 </body>
 </html>

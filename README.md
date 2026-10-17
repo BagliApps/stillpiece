@@ -1,6 +1,7 @@
 # Stillpiece
 
-Stillpiece yapboz oyununun gizlilik politikası ve destek sayfası (GitHub Pages).
+Stillpiece yapboz oyununun tanıtım, gizlilik ve destek sayfaları (GitHub Pages, İngilizce + Türkçe).
 
-- Gizlilik: https://bagliapps.github.io/stillpiece.github.io/privacy.html
-- Destek: https://bagliapps.github.io/stillpiece.github.io/support.html
+- Ana sayfa: https://bagliapps.github.io/stillpiece/
+- Gizlilik: https://bagliapps.github.io/stillpiece/privacy.html (`privacy-tr.html`)
+- Destek: https://bagliapps.github.io/stillpiece/support.html (`support-tr.html`)
