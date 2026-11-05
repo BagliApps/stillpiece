@@ -25,10 +25,8 @@
   window.addEventListener("blur", gone);
   function store() { if (!left) location.replace(ios ? STORE : android && ANDROID_LIVE ? PLAY : "index.html"); }
   if (ios || android) {
-    var f = document.createElement("iframe");
-    f.style.display = "none";
-    f.src = "stillpiece://open";
-    document.body ? document.body.appendChild(f) : document.addEventListener("DOMContentLoaded", function () { document.body.appendChild(f); });
+    // Gizli çerçeve iOS'ta çalışmıyor; yönlendirme gerekiyor.
+    location.href = "stillpiece://open";
     setTimeout(store, 2000);
   } else {
     location.replace("index.html");
