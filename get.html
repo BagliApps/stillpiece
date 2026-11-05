@@ -6,37 +6,52 @@
 <title>Stillpiece</title>
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="style.css">
+<style>
+.get{text-align:center;padding-top:72px}
+.get h1{margin:0 0 4px}
+.get p{margin:0 0 32px}
+.get a.btn{display:block;max-width:320px;margin:0 auto 14px;padding:15px 20px;border-radius:14px;font-weight:600;text-decoration:none;border:1px solid var(--accent)}
+.get a.main{background:var(--accent);color:var(--bg)}
+.get a.alt{color:var(--accent)}
+</style>
+</head>
+<body>
+<main class="get">
+<h1>Stillpiece</h1>
+<p class="muted" id="sub">A calm jigsaw puzzle game</p>
+<a class="btn main" id="open" href="stillpiece://open" hidden>Open in the app</a>
+<a class="btn alt" id="store" href="index.html">Get Stillpiece</a>
+</main>
 <script>
-// Paylaşım bağlantısı. iPhone/iPad: önce uygulamayı açmayı dener (stillpiece://),
-// açılmazsa App Store'a gider. Android: Play'de yayına çıkınca (ANDROID_LIVE)
-// Google Play'e, o zamana dek siteye. Diğerleri siteye.
+// Paylaşım bağlantısı. Otomatik yönlendirme yok: uygulaması olmayanlarda
+// stillpiece:// Safari'de "adres geçersiz" uyarısı verdiği için iki düğme gösterilir.
+// Play'de yayına çıkınca ANDROID_LIVE true yapılır (o zamana dek Android siteye gider).
 (function () {
   var ANDROID_LIVE = false;
-  var STORE = "https://apps.apple.com/app/id6824636510";
-  var PLAY = "https://play.google.com/store/apps/details?id=com.alperbagli.stillpiece";
   var ua = navigator.userAgent || "";
   var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
   var android = /Android/.test(ua);
-  var left = false;
-  function gone() { left = true; }
-  // Uygulama açılırsa (ya da iOS onay penceresi çıkarsa) sayfa gizlenir/odağı kaybeder.
-  document.addEventListener("visibilitychange", function () { if (document.hidden) gone(); });
-  window.addEventListener("pagehide", gone);
-  window.addEventListener("blur", gone);
-  function store() { if (!left) location.replace(ios ? STORE : android && ANDROID_LIVE ? PLAY : "index.html"); }
-  if (ios || android) {
-    // Gizli çerçeve iOS'ta çalışmıyor; yönlendirme gerekiyor.
-    location.href = "stillpiece://open";
-    setTimeout(store, 2000);
+  var tr = (navigator.language || "").slice(0, 2) === "tr";
+  var T = {
+    sub: tr ? "Sakin bir yapboz oyunu" : "A calm jigsaw puzzle game",
+    open: tr ? "Uygulamada aç" : "Open in the app",
+    ios: tr ? "App Store'dan indir" : "Download on the App Store",
+    play: tr ? "Google Play'den indir" : "Get it on Google Play",
+    site: tr ? "Stillpiece'i keşfet" : "Discover Stillpiece"
+  };
+  document.documentElement.lang = tr ? "tr" : "en";
+  document.getElementById("sub").textContent = T.sub;
+  var open = document.getElementById("open"), store = document.getElementById("store");
+  if (ios) {
+    open.hidden = false; open.textContent = T.open;
+    store.href = "https://apps.apple.com/app/id6824636510"; store.textContent = T.ios;
+  } else if (android && ANDROID_LIVE) {
+    open.hidden = false; open.textContent = T.open;
+    store.href = "https://play.google.com/store/apps/details?id=com.alperbagli.stillpiece"; store.textContent = T.play;
   } else {
-    location.replace("index.html");
+    store.textContent = T.site;
   }
 })();
 </script>
-</head>
-<body>
-<main>
-<p><a href="stillpiece://open">Stillpiece</a> · <a href="https://apps.apple.com/app/id6824636510">App Store</a> · <a href="index.html">Stillpiece</a></p>
-</main>
 </body>
 </html>
