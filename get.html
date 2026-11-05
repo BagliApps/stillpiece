@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stillpiece</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+<script>
+// Paylaşım bağlantısı: iPhone/iPad App Store'a, Android Google Play'e, diğerleri siteye gider.
+// Play'de yayına çıkınca ANDROID_LIVE true yapılır (o zamana dek Android siteye düşer).
+(function () {
+  var ANDROID_LIVE = false;
+  var ua = navigator.userAgent || "";
+  var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var to = "index.html";
+  if (ios) to = "https://apps.apple.com/app/id6824636510";
+  else if (/Android/.test(ua) && ANDROID_LIVE) to = "https://play.google.com/store/apps/details?id=com.alperbagli.stillpiece";
+  location.replace(to);
+})();
+</script>
+</head>
+<body>
+<main>
+<p><a href="https://apps.apple.com/app/id6824636510">App Store</a> · <a href="index.html">Stillpiece</a></p>
+</main>
+</body>
+</html>
